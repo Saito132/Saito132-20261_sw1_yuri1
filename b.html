@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> *{ font-family: Arial, Helvetica, sans-serif;}</style>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        var n1 = 6
+        var n2 = 2
+
+        $("body").append(`n1: ${n1} e n2: ${n2}`)
+
+        $("#soma").click(function(){
+            var soma = n1 + n2
+            $("div").append(`Soma:${soma}|`)
+        })
+
+        $("#sub").click(function(){
+            var sub = n1 - n2
+            $("div").append(`Subtração:${sub}| `)
+        })
+        $("#mult").click(function(){
+            var mult = n1 * n2
+            $("div").append(`Multiplicação: ${mult}| `)
+        })
+        $("#divi").click(function(){
+            var divi = n1 / n2
+            $("div").append(`Divisão:${divi}| `)
+        })
+
+
+
+    })
+
+    </script>
+</head>
+<body>
+<button id="soma"></button>    
+<button id="sub"></button>
+<button id="mult"></button>
+<button id="divi"></button>
+<br>
+<div></div>
+</body>
+</html>
