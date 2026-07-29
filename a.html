@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+//b1
+$("#b1").on({
+
+    click: function(){
+        $("div").html("botao1 clicado")
+
+}
+})
+
+//b2
+$("#b2").on({
+
+    click: function(){
+        $("div").html("botao2 clicado")
+
+}
+})
+//b3
+
+$("#b3").on({
+
+    click: function(){
+        $("div").html("botao3 clicado")
+}
+})
+//b4
+
+$("#b4").on({
+
+    click: function(){
+        $("div").html("botao4 clicado")
+
+}
+})
+
+//fim
+
+})
+</script>
+</head>
+<body>
+
+<button id="b1">botao1</button>
+<button id="b2">botao2</button>
+<button id="b3">botao3</button>
+<button id="b4">botao4</button>
+<br>
+<div class="colorido"></div>
+</body>
+
+<style>
+
+.colorido{
+
+color: blue;
+
+animation-name: rainbow;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+animation-direction: alternate;
+
+}
+
+@keyframes rainbow{
+
+0%{color:blue}
+
+100%{color: red;}
+}
+</style>
+
+
+</html>
