@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> *{ font-family: Arial, Helvetica, sans-serif;}</style>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        var n1;
+        var n2;
+        
+        function puxar(){
+
+        n1 = parseInt($("#n1").val())
+        n2 = parseInt($("#n2").val())
+}
+
+    $(document).ready(function(){
+
+
+
+        $("#soma").click(function(){
+
+            puxar()
+
+            var soma = n1 + n2
+
+            $("div").append(`<br>Soma:${soma.toFixed(2)}|`)
+        
+        })
+
+        $("#sub").click(function(){
+            puxar()
+            var sub = n1 - n2
+            $("div").append(`<br>Subtração:${sub.toFixed(2)}| `)
+        })
+        $("#mult").click(function(){
+            puxar()
+            var mult = n1 * n2
+            $("div").append(`<br>Multiplicação: ${mult.toFixed(2)}| `)
+        })
+        $("#divi").click(function(){
+            puxar()
+            var divi = n1 / n2
+            $("div").append(`<br>Divisão:${divi.toFixed(2)}| `)
+        })
+
+
+
+    })
+
+    </script>
+</head>
+
+<input type="number" id="n1" placeholder="n1">
+<input type="number" id="n2" placeholder="n2">
+
+<body>
+<button id="soma">Soma</button>    
+<button id="sub">Subtração</button>
+<button id="mult">Multiplicação</button>
+<button id="divi">Divisão</button>
+<br>
+<div></div>
+</body>
+</html>
