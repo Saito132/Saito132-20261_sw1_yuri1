@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function(){
+
+            $vel = 2000   
+
+            function atualizar(){            
+            $('#spd').text(`${$vel/1000}seg(s)`)
+        }
+
+            $('#hide').click(function(){
+                $('img').hide($vel);
+            });
+
+            $('#show').click(function(){
+                $('img').show($vel);
+            });
+
+            $('#hstoggle').click(function(){
+                $('img').toggle($vel);
+            });
+
+            $('#fadein').click(function(){
+                $('img').fadeIn($vel);
+            });
+
+            $('#fadeout').click(function(){
+                $('img').fadeOut($vel);
+            });
+
+            $('#ftoggle').click(function(){
+                $('img').fadeToggle($vel);
+            });
+
+            $('#slideup').click(function(){
+                $('img').slideUp($vel);
+            });
+
+            $('#slidedown').click(function(){
+                $('img').slideDown($vel);
+            });
+
+            $('#stoggle').click(function(){
+                $('img').slideToggle($vel);
+            });
+            $('#raspido').click(function(){
+
+                $vel -= 250
+                atualizar()
+
+            })
+             $('#devragar').click(function(){
+
+                $vel += 250
+                atualizar()
+
+            })
+
+
+
+
+});
+    </script>
+
+</head>
+<body>
+    <style>
+
+        #img{
+
+            height:200px;
+            justify-content: center;
+            display:flex;
+        }
+        
+        #butao{
+
+            text-align: center;
+
+        }
+    </style>
+        <div id="img">
+    <img src="Saness.jpg">
+        </div>
+        
+        <div id="butao">
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="hstoggle">Toggle(Hide/Show)</button>
+    <button id="fadein">Fade In</button>
+    <button id="fadeout">Fade Out</button>
+    <button id="ftoggle">Toggle(Fade In/Out)</button>
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+    <button id="stoggle">Toggle (Slide Up/Down)</button>
+    <br>
+    
+    <button id="raspido">-</button>
+    <span id="spd"></span>
+    <button id="devragar">+</button>
+        </div>
+</body>
+</html>
