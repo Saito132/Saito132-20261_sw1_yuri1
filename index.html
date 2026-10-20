@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+$(document).ready(function() {
+
+    $('#submit').click(function() {
+    
+        var email = $('#email').val();
+        var name = $('#name').val()
+    
+        var request = $.ajax({
+    
+            url: 'insert.php',    
+            type: 'POST',
+            data: "name=" + $name + "&email=" + $email,
+            dataType: "html",
+            success: function(response) {
+                $('#response').html('Server Response: ' + response);
+            },
+            error: function() {
+                $('#response').html('Error sending data.');
+    
+            }
+        });    
+    });    
+});
+
+
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="nome">
+    <input id="email" type="email" placeholder="email">
+    <input id="submit" type="button" value="Submit">
+</body>
+</html>
