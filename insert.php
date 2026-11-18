@@ -1,19 +1,12 @@
 <?php
-include_once("conecta.php");
+include("connect.php");
 try{
-$sql = "INSERT INTO usuario (ds_email,nm_nome) VAlUES (:email,:name)";
-$stmt = $conn->prepare($sql);
+$stmt = $conn->query("INSERT INTO usuarios(ds_email,nm_nome) VALUES (email,name);");
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+foreach ($usuarios as $usuario) {
+    echo $usuario['nm_nome']; echo $usuario['ds_email'];
+}
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-
-$stmt->bindParam(':name',$name);
-$stmt->bindParam(':email',$email);
-
-$stmt-> execute();
-
-echo "connected";
-echo "$email, $name";
 }
 catch(PDOException $s){
 echo "Error:".$s->getMessage();
