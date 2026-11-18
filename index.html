@@ -13,20 +13,22 @@ $(document).ready(function() {
         var email = $('#email').val();
         var name = $('#name').val()
     
-        var request = $.ajax({
+        $.ajax({
     
             url: 'insert.php',    
             type: 'POST',
-            data: "name=" + $name + "&email=" + $email,
+            data: "name=" + name + "&email=" + email,
             dataType: "html",
-            success: function(response) {
-                $('#response').html('Server Response: ' + response);
-            },
-            error: function() {
-                $('#response').html('Error sending data.');
-    
-            }
-        });    
+
+        }).done(function(data) {
+                $('#response').html('Server Response: ' + data);
+            
+        
+        }).fail(function(jqXHR,textStatus,errorThrown){
+
+                 $('#response').html('Server error:', jqXHR, textstatus,errorThrown);   
+
+                })    
     });    
 });
 
@@ -36,6 +38,8 @@ $(document).ready(function() {
     <title>Document</title>
 </head>
 <body>
+    <span id="response"></span>
+    <br>
     <input id="name" type="text" placeholder="nome">
     <input id="email" type="email" placeholder="email">
     <input id="submit" type="button" value="Submit">
